@@ -1,29 +1,25 @@
 body {
     width: 60%; /* largura */
-    margin: auto; /* centralizado */
+    margin: auto;/* centralizado */
     background-color: rgb(67, 168, 236);
     margin-top: 100px; /* espaçamento externo acima */
   }
   
   div{
-    padding: 10px;
+    padding: 10px; /* tamanho do espaço */
   }
 
-  .botao{
+  .botao{ /* estilização dos botões */
     border: black; 
     background-color: burlywood;
-    border-style: solid solid solid solid;
+    border-style: solid solid solid solid; /* definição de borda */
     font-size: 20px;
   }
 
-  .botao:hover{
+  .botao:hover{ /* quando o mouse passa pelo botão */
     color: #000000;
     background-color: #6efaee;
-    border-radius: 10px 10px 10px 10px;
-  }
-  
-  li {
-    padding: 5px;
+    border-radius: 10px 10px 10px 10px; /* curva da borda */
   }
   
   main {

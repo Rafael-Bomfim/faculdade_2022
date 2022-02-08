@@ -1,0 +1,32 @@
+body {
+    width: 60%; /* largura */
+    margin: auto; /* centralizado */
+    background-color: rgb(67, 168, 236);
+    margin-top: 100px; /* espaçamento externo acima */
+  }
+  
+  div{
+    padding: 10px;
+  }
+
+  .botao{
+    border: black; 
+    border-style: solid solid solid solid;
+    font-size: 20px;
+  }
+
+  .botao:hover{
+    color: #330000;
+    background-color: #fae56e;
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  li {
+    padding: 5px;
+  }
+  
+  main {
+    background-color: rgb(240, 105, 105);
+    border-radius: 20px;
+    padding: 10px;
+  }

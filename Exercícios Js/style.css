@@ -11,13 +11,14 @@ body {
 
   .botao{
     border: black; 
+    background-color: burlywood;
     border-style: solid solid solid solid;
     font-size: 20px;
   }
 
   .botao:hover{
-    color: #330000;
-    background-color: #fae56e;
+    color: #000000;
+    background-color: #6efaee;
     border-radius: 10px 10px 10px 10px;
   }
   

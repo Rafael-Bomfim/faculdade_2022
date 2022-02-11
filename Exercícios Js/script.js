@@ -7,11 +7,9 @@ function exe1() {
 function calculadora(num1, num2) {
     let calculo
     let resultado
-
-    for(let i = 0; i < 1; i++) {
-        num1 = Number(prompt(`Informe o valor do primeiro número: `))
-        num2 = Number(prompt(`Informe o valor do segundo número: `))
-    }
+    
+    num1 = Number(prompt(`Informe o valor do primeiro número: `))
+    num2 = Number(prompt(`Informe o valor do segundo número: `))
 
     do { 
         calculo = Number(prompt(`
@@ -46,4 +44,71 @@ function calculadora(num1, num2) {
     while (calculo != 5)
 }
 
+function exe2() {
+    let lado1
+    let lado2
+    let lado3
+    triangulos(lado1, lado2, lado3)
+}
 
+function triangulos(lado1, lado2, lado3) {
+    lado1 = Number(prompt(`Informe o tamanho do primeiro lado do trinângulo em centímetros: `))
+    lado2 = Number(prompt(`Informe o tamanho do segundo lado do trinângulo em centímetros: `))
+    lado3 = Number(prompt(`Informe o tamanho do terceiro lado do trinângulo em centímetros: `))
+
+    if ((lado1 == lado2) && (lado2 == lado3)) {
+        alert(`O triângulo é EQUILÁTERO, todos os seus lados medem ${lado1}cm.`)
+    }
+    else if ((lado1 == lado2) || (lado1 == lado3) || (lado2 == lado3)) {
+        alert(`O triângulo é ISÓSCELES, com dois lados iguais!`)
+    }
+    else {
+        alert(`O triângulo é ESCALENO com todos os lados diferentes, sendo eles: ${lado1}cm, ${lado2}cm e ${lado3}cm.`)
+    }
+}
+
+function exe3() {
+    let base 
+    let expoente
+    potenciacao(base, expoente)
+}
+
+function potenciacao(base, expoente) {
+    let resultado
+    base = Number(prompt(`Informe o valor da base:`))
+    expoente = Number(prompt(`Informe o valor do expoente:`))
+
+    resultado = Math.pow(base, expoente) //** 
+    alert(`O resultado da potenciação de base ${base} e expoente ${expoente} é igual á: ${resultado}.`)
+}
+
+function exe4() {
+    let dividendo
+    let divisor
+    divisao(dividendo, divisor)
+}
+
+function divisao(dividendo, divisor) {
+    let resultado
+    let resto
+    dividendo = Number(prompt(`Informe o valor do dividendo:`))
+    divisor = Number(prompt(`Informe o valor do divisor:`))
+
+    resultado = dividendo / divisor
+    resto = dividendo % divisor
+
+    alert(`O resultado da divisão é ${resultado} e o resto é ${resto}`)
+}
+
+function exe5() {
+    let valor
+    converter(valor)
+}
+
+function converter(valor) {
+    let resultado
+    valor = Number(prompt(`Informe o valor que deseja converter em reais:`))
+    resultado = valor.toFixed(2).toString().replace(".",",")
+
+    alert(`O valor convertido em dinheiro ficará R$${resultado}`)
+}

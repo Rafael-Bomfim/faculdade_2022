@@ -78,7 +78,7 @@ function potenciacao(base, expoente) {
     base = Number(prompt(`Informe o valor da base:`))
     expoente = Number(prompt(`Informe o valor do expoente:`))
 
-    resultado = Math.pow(base, expoente) //** 
+    resultado = Math.pow(base, expoente) //potenciação** 
     alert(`O resultado da potenciação de base ${base} e expoente ${expoente} é igual á: ${resultado}.`)
 }
 

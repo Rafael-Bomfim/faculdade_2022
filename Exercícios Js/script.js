@@ -109,6 +109,6 @@ function converter(valor) {
     let resultado
     valor = Number(prompt(`Informe o valor que deseja converter em reais:`))
     resultado = valor.toFixed(2).toString().replace(".",",")
-
+    //fixa duas casas após a vírgula. converte a variável em string. troca o ponto por vírgula
     alert(`O valor convertido em dinheiro ficará R$${resultado}`)
 }

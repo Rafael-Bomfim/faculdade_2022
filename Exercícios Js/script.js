@@ -112,3 +112,29 @@ function converter(valor) {
     //fixa duas casas após a vírgula. converte a variável em string. troca o ponto por vírgula
     alert(`O valor convertido em dinheiro ficará R$${resultado}`)
 }
+
+function exe7() {
+    let ax2
+    let bx 
+    let c 
+    baskara(ax2, bx, c)
+}
+
+function baskara(ax2, bx, c) {
+    let resultado = []
+    let delta = ((bx ** 2) - (4 * ax2 * c)) 
+    ax2 = Number(prompt(`Informe o valor de a: `))
+    bx  = Number(prompt(`Informe o valor de b: `))
+    c   = Number(prompt(`Informe o valor de c: `))
+
+    if (delta < 0) {
+        alert(`Delta é negativo!!`)
+    }
+    let x1 = (-bx + Math.sqrt(delta)) / (2 * ax2) //raiz quadrada de um número
+    let x2 = (-bx - Math.sqrt(delta)) / (2 * ax2)
+
+    resultado.push(x1)
+    resultado.push(x2)
+
+    alert(`O x1 é = ${x1} e o x2 é = ${x2}`)
+}

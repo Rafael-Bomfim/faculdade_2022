@@ -162,3 +162,32 @@ function baskara(ax2, bx, c) {
 
     alert(`O x1 é = ${x1} e o x2 é = ${x2}`)
 }
+
+function exe8() {
+    let pontuacoes
+    basquete(pontuacoes)
+}
+
+function basquete(pontuacoes) { 
+    pontuacoes = "10 20 20 8 25 3 0 30 1"
+    let vetor
+    vetor = pontuacoes.split(" ")
+
+    let recordes = 0
+    let piorJogo = 1
+    let maiorPontuacao = vetor[0] //primeira posição
+    let menorPontuacao = vetor[0] //primeira posição
+
+    for(let i = 1; i < vetor.length; i++) {
+        let pontuacao = parseInt(vetor[i]) //transforma o número em inteiro 
+        if (pontuacao > maiorPontuacao) {
+            maiorPontuacao = pontuacao
+            recordes++
+        }
+        else if (pontuacao < menorPontuacao) {
+            menorPontuacao = pontuacao
+            piorJogo = i + 1
+        }
+    }
+    alert(`O recorde de pontos foi batido ${recordes} vezes e a pior pontuação foi no jogo ${piorJogo}!`)
+}

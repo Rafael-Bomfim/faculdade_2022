@@ -113,6 +113,30 @@ function converter(valor) {
     alert(`O valor convertido em dinheiro ficará R$${resultado}`)
 }
 
+function exe6() {
+    let capitalInicial
+    let taxa 
+    let tempo 
+    capitalInicial = Number(prompt(`Qual o capital incial?`))
+    taxa = Number(prompt(`Qual a taxa de juros?`))
+    tempo = Number(prompt(`Qual o tempo de aplicação?`))
+    jurossimples(capitalInicial, taxa, tempo)
+    juroscomposto(capitalInicial, taxa, tempo)
+}
+
+function jurossimples(capitalInicial, taxa, tempo) {
+    let montante
+    montante = capitalInicial * (1 + taxa) * tempo
+
+    alert(`O montante da aplicação com o juros simples é R$${montante}`)
+}
+
+function juroscomposto(capitalInicial, taxa, tempo) {
+    let montante
+    montante = capitalInicial * (1 + taxa) ** tempo
+    alert(`O montante da aplicação com o juros composto é R$${montante}`)
+}
+
 function exe7() {
     let ax2
     let bx 

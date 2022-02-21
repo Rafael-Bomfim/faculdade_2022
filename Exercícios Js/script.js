@@ -191,3 +191,19 @@ function basquete(pontuacoes) {
     }
     alert(`O recorde de pontos foi batido ${recordes} vezes e a pior pontuação foi no jogo ${piorJogo}!`)
 }
+
+function exe10() {
+    let numero 
+    divisivel3(numero)
+}
+
+function divisivel3(numero) {
+    numero = Number(prompt(`Informe o número desejado: `))
+
+    if(numero % 3 == 0) {
+        alert(`O número é divisível por 3!!`)
+    }
+    else {
+        alert(`O número não é divisível por 3!!`)
+    }
+}

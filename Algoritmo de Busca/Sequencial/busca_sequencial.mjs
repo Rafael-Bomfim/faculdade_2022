@@ -12,7 +12,7 @@ function buscaSequencial(vetor, valorBusca) {
 // console.log('Posição de uva: ', buscaSequencial(frutas, 'limão'))
 // console.log('Posição de uva: ', buscaSequencial(frutas, 'limao'))
 
-import { nomes } from './vetor-nomes.mjs'
+import { nomes } from './listas/vetor-nomes.mjs'
 
 console.time('COMEÇO....')
 console.log('Posição de GUSTAVO: ', buscaSequencial(nomes,'GUSTAVO'))

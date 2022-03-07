@@ -1,4 +1,4 @@
-let num = [0, 11, 22, 33, 44, 55, 66, 77, 88, 99]
+//let num = [0, 11, 22, 33, 44, 55, 66, 77, 88, 99]
 
 function buscaBinaria(vetor, valorBusca) {
     let ini = 0
@@ -19,7 +19,7 @@ function buscaBinaria(vetor, valorBusca) {
     }
     return -1
 }
-console.log('Posição de 22:', buscaBinaria(num, 88))
+//console.log('Posição de 22:', buscaBinaria(num, 88))
 
 import {nomes} from './listas/vetor-nomes.mjs'
 

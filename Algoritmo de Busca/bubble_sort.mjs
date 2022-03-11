@@ -42,7 +42,6 @@ function bubbleSort2(vetor) {
   while(troca); //se não houver troca, troca = false
 }
 
-
 bubbleSort2(itens)
 
 console.log('Números ordenados:', itens);

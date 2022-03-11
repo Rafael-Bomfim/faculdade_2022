@@ -17,10 +17,8 @@
 // console.log('Números ordenados:', vetor);
 //console.log(contador)
 
-let itens = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11];
-let trocou
-let pass
-let comp 
+//let itens = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11];
+let trocou, pass, comp
 
 function bubbleSort2(vetor) {
     let troca //variável para verificar se houve troca de posição
@@ -42,9 +40,18 @@ function bubbleSort2(vetor) {
   while(troca); //se não houver troca, troca = false
 }
 
-bubbleSort2(itens)
+// bubbleSort2(itens)
 
-console.log('Números ordenados:', itens);
+// console.log('Números ordenados:', itens);
+// console.log('Passou:', pass, 'vezes')
+// console.log('Comparou:', comp, 'vezes')
+// console.log('Trocou:', trocou, 'vezes')
+
+import {nomes} from './listas/nomes-desord.mjs'
+
+bubbleSort2(nomes)
+
+console.log(nomes)
 console.log('Passou:', pass, 'vezes')
 console.log('Comparou:', comp, 'vezes')
 console.log('Trocou:', trocou, 'vezes')

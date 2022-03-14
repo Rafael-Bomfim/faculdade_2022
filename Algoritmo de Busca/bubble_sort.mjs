@@ -26,7 +26,7 @@ function bubbleSort2(vetor) {
     pass = 0
     comp = 0
   do{ 
-    troca = false; //iniar a variável como false para ela ser o ponto de saída
+    troca = false; //iniciar a variável como false para ela ser o ponto de saída
     pass++
     for(let i = 0; i < vetor.length -1; i++) { //percorre as posições do vetor
       comp++

@@ -23,3 +23,6 @@ import {nomes} from './listas/nomes-desord.mjs'
 selection_sort(nomes)
 
 console.log(nomes)
+console.log('Passou', pass, 'vezes')
+console.log('Comparou', comp, 'vezes')
+console.log('Trocou', troca, 'vezes')

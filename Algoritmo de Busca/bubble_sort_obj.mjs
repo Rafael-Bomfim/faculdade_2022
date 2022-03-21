@@ -22,9 +22,18 @@ function bubbleSort2(vetor, fnComp) {
 
 import {objMotoristas} from './listas/motoristas-obj-desord.mjs'
 
-bubbleSort2(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista) //passagem da função fnComp já definindo seu parâmetros
+//bubbleSort2(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista) //passagem da função fnComp já definindo seu parâmetros
+
+// console.log(objMotoristas)
+// console.log('Passou:', pass, 'vezes')
+// console.log('Comparou:', comp, 'vezes')
+// console.log('Trocou:', trocou, 'vezes')
+
+bubbleSort2(objMotoristas, (elem1, elem2) => {
+  if(elem1.razao_social === elem2.razao_social) { //se houver duas razões sociais iguais na ordenação
+    return elem1.nome_motorista > elem2.nome_motorista //o desempate será pelo nome do motorista
+  }
+  else return elem1.razao_social > elem2.razao_social //se não só retorna as razões sociais
+})
 
 console.log(objMotoristas)
-console.log('Passou:', pass, 'vezes')
-console.log('Comparou:', comp, 'vezes')
-console.log('Trocou:', trocou, 'vezes')

@@ -7,13 +7,13 @@ function buscaBinaria(vetor, valorBusca) {
     while(fim >= ini) {
         let meio = Math.floor((ini + fim) / 2) //resultado da divisão sempre será um número inteiro
 
-        if(valorBusca === vetor[meio]) {
-            return meio
+        if(valorBusca === vetor[meio]) { //se o valor da busca estiver no meio do vetor
+            return meio 
         }
-        else if(valorBusca > vetor[meio]) {
+        else if(valorBusca > vetor[meio]) { //se o valor da busca estiver para a direita do meio do vetor
             ini = meio +1
         }
-        else {
+        else { //se o valor da busca estiver para a esquerda do meio do vetor
             fim = meio -1
         }
     }

@@ -10,8 +10,8 @@ function bubbleSort2(vetor, fnComp) {
     pass++
     for(let i = 0; i < vetor.length -1; i++) { //percorre as posições do vetor
       comp++
-     if (fnComp(vetor[i], vetor[i+1])) {
-      [[vetor[i], vetor[i+1]] = [vetor[i+1], vetor[i]]]
+     if (fnComp(vetor[i], vetor[i+1])) { //testa os dois elementos que foram passados como parâmetros
+      [[vetor[i], vetor[i+1]] = [vetor[i+1], vetor[i]]] //trocando a ordem dos elementos
       troca = true
       trocou++
      }
@@ -22,7 +22,7 @@ function bubbleSort2(vetor, fnComp) {
 
 import {objMotoristas} from './listas/motoristas-obj-desord.mjs'
 
-bubbleSort2(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
+bubbleSort2(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista) //passagem da função fnComp já definindo seu parâmetros
 
 console.log(objMotoristas)
 console.log('Passou:', pass, 'vezes')

@@ -32,7 +32,7 @@ function bubbleSort2(vetor) {
       comp++
       if(vetor[i] > vetor[i+1]) { //se a posição for maior que a da frente
         [vetor[i], vetor[i+1]] = [vetor[i + 1], vetor[i]] //troca a ordem
-        troca = true;
+        troca = true; //trocou
         trocou++
       }
     }

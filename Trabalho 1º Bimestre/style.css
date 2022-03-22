@@ -1,0 +1,29 @@
+body {
+    width: 60%; /* largura */
+    margin: auto;/* centralizado */
+    background-color: #5bc0de;
+    margin-top: 30px; /* espaçamento externo acima */
+  }
+  
+  div{
+    padding: 10px; /* tamanho do espaço */
+  }
+
+  .botao{ /* estilização dos botões */ 
+    background-color:  #d9534f;
+    border-style: outset; /* definição de borda */
+    font-size: 20px;
+  }
+
+  .botao:hover{ /* quando o mouse passa pelo botão */
+    color: #000000;
+    background-color: #428bca;
+    border-radius: 10px 10px 10px 10px; /* curva da borda */
+    border-style: inset;
+  }
+  
+  main {
+    background-color: #5cb85c;
+    border-radius: 20px;
+    padding: 10px;
+  }

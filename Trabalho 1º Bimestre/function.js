@@ -1,20 +1,23 @@
-let vetorObj = []
 //Cadastrar alunos
-function opc1() {
-//PASSO 1: ENTRADA DE DADOS
+function cadastrarAluno(alunos){
     let objeto = {
-        nome: prompt(`Digite o nome do Aluno:`),
+        nome: prompt(`Digite o nome do Aluno:`).toUpperCase(),
         ra: Number(prompt(`Digite o RA do Aluno:`)),
         idade: Number(prompt(`Digite a idade do Aluno:`)),
-        sexo: prompt(`Digite o sexo do Aluno:`),
+        sexo: prompt(`Digite o sexo do Aluno: (M - para masculino) e (F - para feminino)`).toUpperCase(),
         media: Number(prompt(`Digite a média do Aluno:`)),
-        resultado: prompt(`Digite o resultado do Aluno:`)
+        resultado: prompt(`Digite o resultado do Aluno: (A - para aprovado) e (R - para reprovado)`).toUpperCase()
     }
-    vetorObj.push(objeto)
-    alert(`Aluno cadastrado com sucesso ${vetor}`)
+    alunos.push(objeto)
+    alert(`Aluno cadastrado com sucesso ${alunos}`)
+}
+//FUNÇÃO PARA CHAMAR A FUNÇÃO DE CADASTRO
+function opc1() {
+    let alunos = []
+    cadastrarAluno(alunos)
 }
 //Relatório de Alunos em ordem crescente por Nome
-function opc2(vetor, fnComp) {
+function relatNome(vetor, fnComp) {
     let troca //variável para verificar se houve troca de posição
     do{ 
         troca = false; //iniciar a variável como false para ela ser o ponto de saída
@@ -27,24 +30,58 @@ function opc2(vetor, fnComp) {
     }
     while(troca); //se não houver troca, troca = false
 }
-
-opc2(vetorObj, (elem1, elem2) => {
-  if(elem1.nome === elem2.nome) { //se houver duas razões sociais iguais na ordenação
-    return elem1.ra > elem2.ra //o desempate será pelo nome do motorista
-  }
-  else return elem1.nome > elem2.nome //se não só retorna as razões sociais
-})
-alert(opc2)
-
+//FUNÇÃO PARA CHAMAR A FUNÇÃO DE RELATÓRIO DE ALUNOS ORDENADOS POR NOME
+function opc2() {
+    relatNome(alunos, (elem1, elem2) => {
+        if(elem1.nome === elem2.nome) { //se houver dois nomes iguais na ordenação
+          return elem1.ra > elem2.ra //o desempate será pelo ra
+        }
+        else return elem1.nome > elem2.nome //se não só retorna as razões sociais
+    })
+    alert(alunos)
+}
 //Relatório de Alunos em ordem decrescente por RA
-function opc3(vetor) {
-    
+function relatRa(vetor, fnComp) {
+    let troca1 //variável para verificar se houve troca de posição
+    do{ 
+        troca1 = false; //iniciar a variável como false para ela ser o ponto de saída
+        for(let i = 0; i < vetor.length -1; i++) { //percorre as posições do vetor
+            if (fnComp(vetor[i], vetor[i+1])) { //testa os dois elementos que foram passados como parâmetros
+            [[vetor[i], vetor[i+1]] = [vetor[i+1], vetor[i]]] //trocando a ordem dos elementos
+            troca1 = true
+            }
+        }
+    }
+    while(troca1); //se não houver troca, troca = false
+}
+//FUNÇÃO PARA CHAMAR A FUNÇÃO DE RELATÓRIO DE ALUNOS ORDENADO POR RA
+function opc3() {
+    relatRa(alunos, (elem1, elem2) => elem1.ra < elem2.ra)
+    alert(alunos)
 }
 //Relatório de Alunos em ordem crescente por Nome, apenas dos Aprovados
-function opc4(vetor) {
-    
+function relatAprovados(vetor, fnComp) {
+    let troca2 //variável para verificar se houve troca de posição
+    do{ 
+        troca2 = false; //iniciar a variável como false para ela ser o ponto de saída
+        for(let i = 0; i < vetor.length -1; i++) { //percorre as posições do vetor
+            if (fnComp(vetor[i], vetor[i+1])) { //testa os dois elementos que foram passados como parâmetros
+            [[vetor[i], vetor[i+1]] = [vetor[i+1], vetor[i]]] //trocando a ordem dos elementos
+            troca2 = true
+            }
+        }
+    }
+    while(troca2); //se não houver troca, troca = false
 }
-
+//CHAMAR A FUNÇÃO RELATÓRIO DOS APROVADOS 
+function opc4(alunos) {
+    let aprovados = []
+    if(alunos.resultado === "A") {
+        aprovados.push(alunos)
+    }
+    relatAprovados(aprovados, (elem1, elem2) => elem1.nome > elem2.nome)
+    alert(aprovados)
+}
 //Encerrar o programa
 function opc5() {
     alert('O PROGRAMA SERÁ FINALIZADO!!!!!')

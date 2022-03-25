@@ -8,7 +8,7 @@ function selectionSort(vetor, fnComp) {
         pass++
         let posMenor = posSel + 1
         for (let i = posMenor+1; i < vetor.length; i++) { 
-            if(vetor[posMenor] > vetor[i]){
+            if(fnComp(vetor[posMenor], vetor[i])){
                 posMenor = i
                 comp++
             }

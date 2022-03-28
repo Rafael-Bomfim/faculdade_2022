@@ -1,15 +1,20 @@
 //Cadastrar alunos
 function cadastrarAluno(alunos){
-    let objeto = {
-        nome: prompt(`Digite o nome do Aluno:`).toUpperCase(),
-        ra: Number(prompt(`Digite o RA do Aluno:`)),
-        idade: Number(prompt(`Digite a idade do Aluno:`)),
-        sexo: prompt(`Digite o sexo do Aluno: (M - para masculino) e (F - para feminino)`).toUpperCase(),
-        media: Number(prompt(`Digite a média do Aluno:`)),
-        resultado: prompt(`Digite o resultado do Aluno: (A - para aprovado) e (R - para reprovado)`).toUpperCase()
+    let quantidade = Number(prompt('Insira a quantidade de alunos que deseja cadastrar agora:'))
+
+    for(let i = 0; i < quantidade; i++){
+        let objeto = {
+            nome: prompt(`Digite o nome do Aluno:`).toUpperCase(),
+            ra: Number(prompt(`Digite o RA do Aluno:`)),
+            idade: Number(prompt(`Digite a idade do Aluno:`)),
+            sexo: prompt(`Digite o sexo do Aluno: (M - para masculino) e (F - para feminino)`).toUpperCase(),
+            media: Number(prompt(`Digite a média do Aluno:`)),
+            resultado: prompt(`Digite o resultado do Aluno: (A - para aprovado) e (R - para reprovado)`).toUpperCase()
+        }
+        alunos[i] = objeto
     }
-    alunos.push(objeto)
-    alert(`Aluno cadastrado com sucesso ${alunos}`)
+    alert(`Alunos cadastrados com sucesso!!`)
+        document.getElementById('vetor').value
 }
 //FUNÇÃO PARA CHAMAR A FUNÇÃO DE CADASTRO
 function opc1() {

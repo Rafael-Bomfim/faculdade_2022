@@ -1,3 +1,4 @@
+let alunos = []
 //Cadastrar alunos
 function cadastrarAluno(alunos){
     let quantidade = Number(prompt('Insira a quantidade de alunos que deseja cadastrar agora:'))
@@ -13,12 +14,14 @@ function cadastrarAluno(alunos){
         }
         alunos[i] = objeto
     }
-    alert(`Alunos cadastrados com sucesso!!`)
-        document.getElementById('vetor').value
+    alert(`Alunos cadastrados com sucesso!!!`)
+    for(let i = 0; i < alunos.length; i++){
+        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        )
+    }
 }
 //FUNÇÃO PARA CHAMAR A FUNÇÃO DE CADASTRO
 function opc1() {
-    let alunos = []
     cadastrarAluno(alunos)
 }
 //Relatório de Alunos em ordem crescente por Nome
@@ -43,7 +46,10 @@ function opc2() {
         }
         else return elem1.nome > elem2.nome //se não só retorna as razões sociais
     })
-    alert(alunos)
+    for(let i = 0; i < alunos.length; i++){
+        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        )
+    }
 }
 //Relatório de Alunos em ordem decrescente por RA
 function relatRa(vetor, fnComp) {
@@ -62,7 +68,10 @@ function relatRa(vetor, fnComp) {
 //FUNÇÃO PARA CHAMAR A FUNÇÃO DE RELATÓRIO DE ALUNOS ORDENADO POR RA
 function opc3() {
     relatRa(alunos, (elem1, elem2) => elem1.ra < elem2.ra)
-    alert(alunos)
+    for(let i = 0; i < alunos.length; i++){
+        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        )
+    }
 }
 //Relatório de Alunos em ordem crescente por Nome, apenas dos Aprovados
 function relatAprovados(vetor, fnComp) {
@@ -79,13 +88,18 @@ function relatAprovados(vetor, fnComp) {
     while(troca2); //se não houver troca, troca = false
 }
 //CHAMAR A FUNÇÃO RELATÓRIO DOS APROVADOS 
-function opc4(alunos) {
+function opc4() {
     let aprovados = []
-    if(alunos.resultado === "A") {
-        aprovados.push(alunos)
+    for(let i = 0; i < alunos.length; i++){
+        if(alunos[i].resultado === "A") {
+            aprovados[i] = alunos[i]
+        }
     }
     relatAprovados(aprovados, (elem1, elem2) => elem1.nome > elem2.nome)
-    alert(aprovados)
+    for(let i = 0; i < aprovados.length; i++){
+        alert( `Nome: ${aprovados[i].nome} \n Ra: ${aprovados[i].ra} \n Idade: ${aprovados[i].idade} \n Sexo: ${aprovados[i].sexo} \n Média: ${aprovados[i].media} \n Resultado: ${aprovados[i].resultado}`
+        )
+    }
 }
 //Encerrar o programa
 function opc5() {

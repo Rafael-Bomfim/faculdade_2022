@@ -16,7 +16,7 @@ function cadastrarAluno(alunos){
     }
     alert(`Alunos cadastrados com sucesso!!!`)
     for(let i = 0; i < alunos.length; i++){
-        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        alert(`Nome: ${alunos[i].nome} \nRa: ${alunos[i].ra} \nIdade: ${alunos[i].idade} \nSexo: ${alunos[i].sexo} \nMédia: ${alunos[i].media} \nResultado: ${alunos[i].resultado}`
         )
     }
 }
@@ -47,7 +47,7 @@ function opc2() {
         else return elem1.nome > elem2.nome //se não só retorna as razões sociais
     })
     for(let i = 0; i < alunos.length; i++){
-        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        alert(`Nome: ${alunos[i].nome} \nRa: ${alunos[i].ra} \nIdade: ${alunos[i].idade} \nSexo: ${alunos[i].sexo} \nMédia: ${alunos[i].media} \nResultado: ${alunos[i].resultado}`
         )
     }
 }
@@ -69,7 +69,7 @@ function relatRa(vetor, fnComp) {
 function opc3() {
     relatRa(alunos, (elem1, elem2) => elem1.ra < elem2.ra)
     for(let i = 0; i < alunos.length; i++){
-        alert( `Nome: ${alunos[i].nome} \n Ra: ${alunos[i].ra} \n Idade: ${alunos[i].idade} \n Sexo: ${alunos[i].sexo} \n Média: ${alunos[i].media} \n Resultado: ${alunos[i].resultado}`
+        alert(`Nome: ${alunos[i].nome} \nRa: ${alunos[i].ra} \nIdade: ${alunos[i].idade} \nSexo: ${alunos[i].sexo} \nMédia: ${alunos[i].media} \nResultado: ${alunos[i].resultado}`
         )
     }
 }
@@ -87,17 +87,21 @@ function relatAprovados(vetor, fnComp) {
     }
     while(troca2); //se não houver troca, troca = false
 }
-//CHAMAR A FUNÇÃO RELATÓRIO DOS APROVADOS 
+//CHAMAR A FUNÇÃO RELATÓRIO DOS APROVADOS
 function opc4() {
     let aprovados = []
+    let reprovados = []  
     for(let i = 0; i < alunos.length; i++){
         if(alunos[i].resultado === "A") {
             aprovados[i] = alunos[i]
         }
+        else {
+            reprovados[i] = alunos[i]
+        }
     }
-    relatAprovados(aprovados, (elem1, elem2) => elem1.nome > elem2.nome)
+    relatAprovados(aprovados, (ele1, ele2) => ele1.nome > ele2.nome)
     for(let i = 0; i < aprovados.length; i++){
-        alert( `Nome: ${aprovados[i].nome} \n Ra: ${aprovados[i].ra} \n Idade: ${aprovados[i].idade} \n Sexo: ${aprovados[i].sexo} \n Média: ${aprovados[i].media} \n Resultado: ${aprovados[i].resultado}`
+        alert(`Nome: ${aprovados[i].nome} \nRa: ${aprovados[i].ra} \nIdade: ${aprovados[i].idade} \nSexo: ${aprovados[i].sexo} \nMédia: ${aprovados[i].media} \nResultado: ${aprovados[i].resultado}`
         )
     }
 }

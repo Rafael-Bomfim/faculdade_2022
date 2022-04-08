@@ -7,12 +7,16 @@ body {
   
   div{
     padding: 10px; /* tamanho do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .botao{ /* estilização dos botões */ 
     background-color:  #d9534f;
     border-style: outset; /* definição de borda */
     font-size: 20px;
+    width: 800px;
   }
 
   .botao:hover{ /* quando o mouse passa pelo botão */

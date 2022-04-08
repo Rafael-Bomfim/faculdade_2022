@@ -24,7 +24,7 @@ function mergeSort(vetor) {
         }
     }
     let sobra
-    if (posEsq < esquerda.length) {
+    if (posEsq < posDir) {
         sobra = esquerda.slice(posEsq)
     } else { 
         sobra = direita.slice(posDir) 
@@ -33,7 +33,12 @@ function mergeSort(vetor) {
     return [...resultado, ...sobra]
 }
 
-let nums = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11]
+//let nums = [77, 44, 22, 33, 99, 55, 88, 0, 66, 11]
 
-let numsOrd = mergeSort(nums)
-console.log({numsOrd})
+import {nomes} from './listas/nomes-desord.mjs'
+
+let nomesOrd = mergeSort(nomes)
+
+//let numsOrd = mergeSort(nums)
+//console.log({numsOrd})
+console.log({nomesOrd})

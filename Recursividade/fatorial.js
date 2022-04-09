@@ -6,4 +6,4 @@ function fatorial(n) {
     return resultado
 }
 
-console.log('Fatorial de 5: ', fatorial(10))
+console.log('Fatorial de 10: ', fatorial(10))

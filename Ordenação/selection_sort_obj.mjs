@@ -3,22 +3,37 @@ function selectionSort(vetor, fnComp) {
     pass = 0
     comp = 0
     troca = 0
-    
+    // Loop posSel vai até a PENÚLTIMA posição do vetor
     for (let posSel = 0; posSel < vetor.length -1; posSel++) {
         pass++
         let posMenor = posSel + 1
+        // Loop para procurar o menor valor no restante do vetor
         for (let i = posMenor+1; i < vetor.length; i++) { 
+            // if(vetor[posMenor] > vetor[i]) posMenor = i
             if(fnComp(vetor[posMenor], vetor[i])){
                 posMenor = i
                 comp++
             }
+            // Se o valor em posMenor for menor que o valor em posSel,
+        // efetua a troca
         }
+        // if(vetor[posSel] > vetor[posMenor]) {
         if(fnComp(vetor[posSel], vetor[posMenor])){
             [[vetor[posSel], vetor[posMenor]] = [vetor[posMenor], vetor[posSel]]]
             troca++
         }     
     }
 }
+// Ordenando por nome_motorista
+//selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista > elem2.nome_motorista)
+
+// Ordenando por nome_motorista em ordem DECRESCENTE
+// selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista < elem2.nome_motorista)
+
+// Ordenando por nome_motorista em ordem DECRESCENTE ignorando acentos
+// selectionSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <= 0)  // LEEEEENTO
+
+// Ordenação em dois níveis: primeiro por razao_social e depois por nome_motorista
 
 import {objMotoristas} from './listas/motoristas-obj-desord.mjs'
 

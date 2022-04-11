@@ -35,6 +35,6 @@ function mergeSort(vetor, fnComp) {
 
 import {objMotoristas} from './listas/motoristas-obj-desord.mjs'
 
-let motoristasOrd = mergeSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista) <= 0) 
+let motoristasOrd = mergeSort(objMotoristas, (elem1, elem2) => elem1.nome_motorista.localeCompare(elem2.nome_motorista, 'pt-br') <= 0) 
 
 console.log(motoristasOrd)

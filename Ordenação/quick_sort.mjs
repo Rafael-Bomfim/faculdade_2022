@@ -18,6 +18,10 @@ function quickSort(vetor, ini = 0, fim = vetor.length - 1) { //inicio e fim do v
     return vetor;
 }
 
-let nums = [2,5,7,1,6,3,4]
-quickSort(nums)
-console.log(nums)
+// let nums = [2,5,7,1,6,3,4]
+// quickSort(nums)
+// console.log(nums)
+
+import {nomes} from './listas/nomes-desord.mjs'
+quickSort(nomes)
+console.log(nomes)

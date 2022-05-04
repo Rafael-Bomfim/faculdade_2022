@@ -1,27 +1,33 @@
-function quickSort(vetor, ini = 0, fim = vetor.length - 1) { //inicio e fim do vetor
-    if (fim <= ini) { //se o vetor tiver somente um elemento
+function quicksort(vetor, fnComp, ini = 0, fim = vetor.length - 1){
+    if(fim <= ini) {
         return vetor
     }
-    if (ini < fim) {
-        let pivo = vetor[fim];
-        let i = ini - 1;
-        for (let j = ini; j < fim; j++) {
-            if (vetor[j] <= pivo) {
-                i++;
-                [vetor[i], vetor[j]] = [vetor[j], vetor[i]];
+    const pivot = fim
+    let div = ini - 1 
+    for(let i = ini; i < fim; i++){
+        if(fnComp(vetor[pivot] , vetor[i])) {
+            div = div+1
+            if(div !== i){
+                [vetor[i],vetor[div]] = [vetor[div],vetor[i]]
             }
         }
-        [vetor[i + 1], vetor[fim]] = [vetor[fim], vetor[i + 1]];
-        quickSort(vetor, ini, i);
-        quickSort(vetor, i + 2, fim);
     }
-    return vetor;
+    div++
+    if(fnComp(vetor[div] , vetor[pivot]) && div !== pivot ){
+        [vetor[div], vetor[pivot]] = [vetor[pivot], vetor[div]]
+    }
+    quicksort(vetor, fnComp, ini, div -1)
+    quicksort(vetor, fnComp, div + 1, fim)
 }
 
-// let nums = [2,5,7,1,6,3,4]
-// quickSort(nums)
-// console.log(nums)
+import {objMotoristas} from './data/motoristas-obj-desord.mjs'
 
-import {nomes} from './listas/nomes-desord.mjs'
-quickSort(nomes)
-console.log(nomes)
+quicksort(objMotoristas, (elem1, elme2) => elem1.nome_motorista.localeCompare(elme2.nome_motorista, 'pt-br') >= 0 )
+// quicksort(objMotoristas, (elem1, elme2) => elem1.nome_motorista < elme2.nome_motorista)
+// quicksort(objMotoristas, (elem1, elme2) => {
+//     if(elem1.razao_social === elme2.razao_social) {
+//         return elem1.nome_motorista > elme2.nome_motorista
+//     }
+//     else return elem1.razao_social > elme2.razao_social
+// })
+console.log(objMotoristas)

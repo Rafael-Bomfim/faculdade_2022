@@ -1,27 +1,32 @@
-import Queue from "./lib/Queue.mjs";
+import Queue from './lib/Queue.mjs'
 
 let fila = new Queue()
+console.log(fila.print())
 
-fila.enqueue('Alexandre')
-fila.enqueue('João')
-fila.enqueue('Maria')
-fila.enqueue('Pedro')
-fila.enqueue('Paulo')
+// Inserções na fila
+fila.enqueue('Cleverton')
+fila.enqueue('Lindalvânia')
+fila.enqueue('Praxedes')
+fila.enqueue('Gerinalda')
 
 console.log(fila.print())
 
+// Remoção da fila
 let atendido = fila.dequeue()
-console.log(`Atendido: ${atendido}`)
+console.log({atendido})
 console.log(fila.print())
 
-fila.enqueue('José')
-fila.enqueue('Davi')
+// Novas inserções
+fila.enqueue('Osclerson')
+fila.enqueue('Hermenevaldo')
 console.log(fila.print())
 
-fila.dequeue()
-fila.dequeue()
-console.log(fila.print())
-
+// Observando o início da fila
 let proximo = fila.peek()
-console.log(`Próximo: ${proximo}`)
+console.log({proximo})
+console.log(fila.print())
+
+// Nova remoção
+atendido = fila.dequeue()
+console.log({atendido})
 console.log(fila.print())
